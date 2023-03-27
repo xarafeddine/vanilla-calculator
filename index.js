@@ -79,19 +79,11 @@ function addEventListeners() {
   });
 
   equals.addEventListener("click", () => {
-    compute();
+    showResults(compute());
   });
 
   AC.addEventListener("click", () => {
-    function clear() {
-      firstNumber = "";
-      lastNumber = "";
-      operation = null;
-      result = "";
-      showResults("");
-
-      showInputs(result);
-    }
+    clear();
   });
 }
 
@@ -112,8 +104,16 @@ function compute() {
   let computation;
   const prev = parseFloat(firstNumber);
   const current = parseFloat(lastNumber);
+
   console.log(prev, current);
-  if (isNaN(prev) || isNaN(current)) return;
+  const arr = [prev, current];
+  if (isNaN(prev)) {
+    if (isNaN(current)) return "Error";
+    else return current;
+  } else {
+    if (isNaN(current)) return prev;
+  }
+
   switch (operation) {
     case "+":
       computation = prev + current;
@@ -128,7 +128,7 @@ function compute() {
       computation = prev / current;
       break;
     default:
-      return;
+      return "Error";
   }
 
   console.log(computation);
@@ -136,11 +136,21 @@ function compute() {
   operation = undefined;
   firstNumber = "";
   result = computation;
-  showInputs();
-  showResults(computation);
+  showInputs(result);
+
   return computation;
 }
 
-function showResults(vlue) {
-  $results.innerText = vlue;
+function showResults(value) {
+  $results.innerText = value;
+}
+
+function clear() {
+  firstNumber = "";
+  lastNumber = "";
+  operation = null;
+  result = "";
+  showResults("");
+
+  showInputs(result);
 }
