@@ -30,14 +30,20 @@ body {
   margin: 10px;
 }
 
-.button {
+button {
   height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+
 }
 
 #results {
   position: absolute;
   color: blue;
-  font-size: large;
-  right: 5px;
-  bottom: 5px;
+  font-weight: bold;
+  font-size: 30px;
+
+  right: 30px;
+  bottom: 20px;
+  
 }
