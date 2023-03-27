@@ -1,0 +1,43 @@
+body {
+  padding: 20%;
+}
+
+.container {
+  margin: auto;
+  padding: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputs {
+  width: 100%;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.screen {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(230, 255, 255);
+  position: relative;
+
+  margin: 10px;
+}
+
+.button {
+  height: 40px;
+}
+
+#results {
+  position: absolute;
+  color: blue;
+  font-size: large;
+  right: 5px;
+  bottom: 5px;
+}
